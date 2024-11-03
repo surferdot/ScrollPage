@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Elegant Auto Scroll",
+    "version": "1.2",
+    "description": "Control automatic page scrolling with persistent speed settings",
+    "permissions": ["storage"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["images/up_arrow.svg", "images/down_arrow.svg", "images/icon16.png", "images/icon48.png", "images/icon128.png"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+}

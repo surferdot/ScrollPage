@@ -20,7 +20,7 @@
   .scroll-button {
     width: 26px;
     height: 26px;
-    background-color: #4CAF50;
+    background-color: #171414;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -32,7 +32,7 @@
   }
   
   .scroll-button:hover {
-    background-color: #45a049;
+    background-color: #2a2424;
     transform: scale(1.1);
   }
   

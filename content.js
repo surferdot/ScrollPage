@@ -36,10 +36,11 @@ function startScrolling(direction) {
         return;
       }
   
-      let adjustedSpeed = scrollSpeed;
+      // 每一步降低50%的速度
+      let adjustedSpeed = scrollSpeed * 0.5;
       if (scrollSpeed > 5) {
-        // 对于高速滚动，使用指数增长
-        adjustedSpeed = 5 + Math.pow(scrollSpeed - 5, 1.5);
+        // 对于高速滚动，先降低50%再使用指数增长
+        adjustedSpeed = (5 + Math.pow(scrollSpeed - 5, 1.5)) * 0.5;
       }
   
       const scrollAmount = direction === 'up' ? -adjustedSpeed : adjustedSpeed;

@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "SmartScroll Plus",
     "version": "1.3",
-    "description": "A smart auto-scrolling extension with customizable speeds, persistent settings, and draggable controls - perfect for smooth webpage navigation",
+    "description": "A smart auto-scrolling extension with customizable speeds, persistent settings, and draggable controls.",
     "permissions": ["storage"],
     "action": {
       "default_popup": "popup.html",

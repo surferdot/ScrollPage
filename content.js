@@ -99,6 +99,14 @@ function makeDraggable(element) {
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   element.onmousedown = dragMouseDown;
 
+  // 从storage中读取保存的位置
+  chrome.storage.sync.get(['controlPosition'], function(result) {
+    if (result.controlPosition) {
+      element.style.top = result.controlPosition.top + 'px';
+      element.style.left = result.controlPosition.left + 'px';
+    }
+  });
+
   function dragMouseDown(e) {
     e.preventDefault();
     pos3 = e.clientX;
@@ -120,6 +128,16 @@ function makeDraggable(element) {
   function closeDragElement() {
     document.onmouseup = null;
     document.onmousemove = null;
+    
+    // 保存当前位置到storage
+    chrome.storage.sync.set({
+      controlPosition: {
+        top: element.offsetTop,
+        left: element.offsetLeft
+      }
+    }, function() {
+      console.log('Control position saved');
+    });
   }
 }
 
